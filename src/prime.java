@@ -1,32 +1,16 @@
 public class prime {
     public static void main(String[] args) {
-        prime(null);
+        //prime(null);
+        System.out.println(prime(49));
     }
-    public static void prime(String[] args)
+    public static boolean prime(int num)
     {
-        int i,m=0,flag=0;
-        int n=3;
-        m=n/2;
-        if(n==0||n==1)
-        {
-            System.out.println("not a prime number");
-        }
-        else{
-            for(i=2;i<=m;i++)
-            {
-                if(n%i==0)
-                {
-                    System.out.println("the number is not prime");
-                    flag=1;
-                    break;
-
-                }
-
-            }
-            if(flag==0)
-            {
-                System.out.println("the given number is prime");
-            }
-        }
+       if(num<=1)return false;
+       if(num==2||num==3)return true;
+       if(num%2==0||num%3==0) return  false;
+       for(int i=5;i<num/2;i=i+6){
+           if(num%i==0||num%(i+2)==0)return false;
+       }
+       return true;
     }
 }
